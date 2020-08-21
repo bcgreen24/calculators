@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}HOME{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    <script src="/static/app.js" type=text/javascript></script>
+
+{% endblock %}
+{% block content %}
+    <h1> Calculators </h1>
+
+    <div id="calculators" class="centered">
+
+        <div class="right_just"><input type="text" id="mult_number1" name="mult_number1"/></div>
+        <div class="left_just"><input type="text" id="mult_number2" name="mult_number2"/>
+            <button id="mult_button">Multiply</button>
+            Answer: <span id="mult_answer"></span>
+        </div>
+
+
+        <div class="right_just"><input type="text" id="div_number1" name="div_number1"/></div>
+        <div class="left_just"><input type="text" id="div_number2" name="div_number2"/>
+            <button id="div_button">Divide</button>
+            Answer: <span id="div_answer"></span>
+        </div>
+
+
+        <div class="right_just"><input type="text" id="add_number1" name="add_number1"/></div>
+        <div class="left_just"><input type="text" id="add_number2" name="add_number2"/>
+            <button id="add_button">Add</button>
+            Answer: <span id="add_answer"></span>
+        </div>
+
+
+        <div class="right_just"><input type="text" id="subtract_number1" name="subtract_number1"/></div>
+        <div class="left_just"><input type="text" id="subtract_number2" name="subtract_number2"/>
+            <button id="subtract_button">Subtract</button>
+            Answer: <span id="subtract_answer"></span>
+        </div>
+
+    </div>
+
+{% endblock %}
