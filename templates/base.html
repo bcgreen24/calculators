@@ -6,6 +6,7 @@
   url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
     {% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma.css') }}">
         <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}
 </head>
@@ -13,7 +14,7 @@
 <div id="wrapper">
     <div id="header">
         {% block header %}
-            CyberPoint Industries
+            <div id="site_title">CyberPoint Industries</div>
         {% endblock %}
     </div>
     <div id="content">

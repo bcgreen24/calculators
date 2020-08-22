@@ -9,11 +9,23 @@ def hello_world():
     return render_template('home.html')
 
 
-@app.route('/multiply', methods=['POST', 'GET'])
-def multiply():
-    a = request.args.get('a', 0, type=float)
-    b = request.args.get('b', 0, type=float)
-    return jsonify(result=a * b)
+@app.route('/calculate', methods=['POST', 'GET'])
+def calculate():
+    key = request.args.get('key', 0, type=str)
+    if check_key(key):
+        a = request.args.get('a', 0, type=float)
+        b = request.args.get('b', 0, type=float)
+        oper = request.args.get('oper', 0, type=str)
+        if oper == 'add':
+            return jsonify(result=a + b)
+        elif oper == 'subtract':
+            return jsonify(result=a - b)
+        elif oper == 'divide':
+            return jsonify(result=a / b)
+        elif oper == 'multiply':
+            return jsonify(result=a * b)
+    else:
+        return jsonify(result="NOT AUTHORIZED")
 
 
 @app.route('/divide', methods=['POST', 'GET'])
@@ -36,6 +48,11 @@ def subtract():
     b = request.args.get('b', 0, type=float)
     return jsonify(result=a - b)
 
+def check_key(key):
+    if key != 'qweasdzxc':
+        return False
+    else:
+        return True
 
 @app.route('/hello/')
 @app.route('/hello/<name>')
@@ -44,4 +61,4 @@ def hello(name=None):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')

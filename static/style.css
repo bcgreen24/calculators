@@ -15,7 +15,11 @@ div#content{
     background-color: #ddd;
     color: #222;
     padding: 10px;
+    font-family: sans-serif;
+}
 
+div#site_title{
+    margin-top:70px;
 }
 
 div#footer{
@@ -32,6 +36,11 @@ div#wrapper{
     margin-left:auto;
     margin-right:auto;
     text-align:center;
+}
+
+div.calc_inner{
+    float: left;
+    padding: 13px;
 }
 
 div#calculators{
