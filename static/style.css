@@ -18,8 +18,14 @@ div#content{
     font-family: sans-serif;
 }
 
+div.menu_item{
+    padding: 10px;
+    font-sizse: 16!important;
+    float: left;
+}
+
 div#site_title{
-    margin-top:70px;
+    margin-top:40px;
 }
 
 div#footer{
@@ -42,9 +48,18 @@ div.calc_inner{
     float: left;
     padding: 13px;
 }
+.select{
+    width: 125px;
+    height: 37px!important;
+}
+
+button.is-small{
+    height: 37px;
+}
 
 div#calculators{
-    width: 800px;
+    width: 80%;
+    margin-left: 20%;
 }
 
 .centered{
@@ -68,4 +83,14 @@ div#calculators{
 
 button{
     width:100px;
+}
+
+div#music_player{
+    width: 50%;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+div#now_playing{
+    font-size: 24px!important;
 }

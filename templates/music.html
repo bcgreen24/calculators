@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}MUSIC{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    <script src="/static/music_app.js" type=text/javascript></script>
+
+{% endblock %}
+{% block content %}
+
+    <div class="box" id="music_player" class="centered">
+    <div id="now_playing">NOW PLAYING:<br/>
+        <span id="song_name"></span>
+    </div>
+    {%  for song in songs %}
+        <a class="music_link" id="{{ path + song }}" href="#">{{  song }}</a><br/>
+    {%  endfor  %}
+
+    </div>
+
+{% endblock %}

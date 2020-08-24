@@ -16,10 +16,16 @@
         {% block header %}
             <div id="site_title">CyberPoint Industries</div>
         {% endblock %}
+        <div id="menu_bar">
+            {% include "menu_bar.html" %}
+        </div>
     </div>
+
     <div id="content">
         {% block content %}
-        {% endblock %}</div>
+        {% endblock %}
+    </div>
+
     <div id="footer">
         {% block footer %}
             &copy; Copyright 2020 by <a href="http://cyberpoint.biz/">CyberPoint Industries</a>.
@@ -28,4 +34,4 @@
 </div>
 
 </body>
-< /html>
+</html>

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 from flask import request
+import os
 
 app = Flask(__name__)
 
@@ -7,6 +8,20 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return render_template('home.html')
+
+
+@app.route('/calc')
+def show_calc():
+    return render_template('calc.html')
+
+
+@app.route('/music')
+def show_music_page():
+    songs = os.listdir('./static/songs')
+    for song in songs:
+        song_title = os.path.basename(song)
+        print(song_title)
+    return render_template('music.html', songs=songs, path='./static/songs/')
 
 
 @app.route('/calculate', methods=['POST', 'GET'])

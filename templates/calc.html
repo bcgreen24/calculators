@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}CALCULATOR{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    <script src="/static/app.js" type=text/javascript></script>
+
+{% endblock %}
+{% block content %}
+
+    <div id="calculators" class="centered">
+
+        <div class="right_just"><input size="10" name="number1" class="input" type="text" placeholder="Text input"></div>
+        <div class="left_just"><input size="10" name="number2" class="input" type="text" placeholder="Text input"></div>
+           <div class="calc_inner">
+               <select id="operation" class="select">
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+                <option value="multiply">Multiply</option>
+                <option value="divide">Divide</option>
+            </select>
+            <button id="calculate" class="button is-primary is-small">Calculate</button>
+            Answer: <span id="answer"></span>
+           </div>
+
+
+    </div>
+
+{% endblock %}
