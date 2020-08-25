@@ -20,7 +20,7 @@ div#content{
 
 div.menu_item{
     padding: 10px;
-    font-sizse: 16!important;
+    font-size: 16px!important;
     float: left;
 }
 
@@ -64,8 +64,7 @@ div#calculators{
 
 .centered{
     text-align:center;
-    margin-left:auto;
-    margin-right:auto;
+    width: 80%;
 }
 
 .left_just{
@@ -93,4 +92,50 @@ div#music_player{
 
 div#now_playing{
     font-size: 24px!important;
+}
+
+.small{
+    font-size: 10px;
+}
+
+div#player_wrapper{
+    width: 400px;
+    height: 200px;
+    background-color: #336699;
+    color: #ddd;
+    padding: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    font-family: sans-serif;
+    border-radius: 10px;
+}
+.left{
+    float:left;
+}
+
+.clear{
+    clear:both;
+}
+
+.centered{
+    text-align: center;
+}
+
+div#player_top_row{
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.fifty_percent{
+    width: 50%;
+}
+
+.ninety_percent{
+    width: 90%;
+}
+
+.row_center{
+    height: 30px;
+    margin-left:auto;
+    margin-right:auto;
 }

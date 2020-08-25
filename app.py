@@ -24,6 +24,12 @@ def show_music_page():
     return render_template('music.html', songs=songs, path='./static/songs/')
 
 
+@app.route('/get_song_array')
+def get_song_array():
+    songs = os.listdir('./static/songs')
+    return jsonify(path='./static/songs/', songs=songs)
+
+
 @app.route('/calculate', methods=['POST', 'GET'])
 def calculate():
     key = request.args.get('key', 0, type=str)
