@@ -15,12 +15,25 @@
 {% endblock %}
 {% block content %}
 
-    <div class="box" id="music_player" class="centered">
+{#    <div class="box" id="music_player" class="centered">
         {% include "player.html"  %}
         {% for song in songs %}
             <a class="music_link" id="{{ path + song }}" href="#">{{ song }}</a><br/>
         {% endfor %}
 
+    </div>#}
+
+
+
+    {% include "player.html"  %}
+    <div id="song_list" class="list-group">
+         {% for song in songs %}
+              <a href="#" id="{{ path + song }}" class="list-group-item list-group-item-action music_link">{{ song }}</a>
+        {% endfor %}
     </div>
+
+
+
+
 
 {% endblock %}

@@ -100,7 +100,7 @@ div#now_playing{
 
 div#player_wrapper{
     width: 400px;
-    height: 200px;
+    height: 250px;
     background-color: #336699;
     color: #ddd;
     padding: 10px;
@@ -108,6 +108,7 @@ div#player_wrapper{
     margin-right:auto;
     font-family: sans-serif;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 .left{
     float:left;
@@ -123,7 +124,7 @@ div#player_wrapper{
 
 div#player_top_row{
     height: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .fifty_percent{
@@ -147,4 +148,31 @@ button#play_pause{
     border: 0px;
     margin: 4px;
     padding: 4px;
+}
+
+div#song_list{
+
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.list-group{
+    max-height: 300px;
+    margin-bottom: 10px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+div#play_pos{
+    height: 30px;
+    width: 350px;
+    border: solid 1px #ddd;
+}
+
+div#play_bar{
+    height:28px;
+    width: 0px;
+    background-color: #3b79de;
 }
