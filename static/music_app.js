@@ -22,6 +22,7 @@ $(function () {
 
     player.onended = function () {
         clearInterval(timer);
+        $('#play_pause').enabled = false;
         if (document.getElementById("autoplay").checked) {
             player.src = "";
             song_index += 1;
@@ -47,13 +48,22 @@ $(function () {
         });
 
 
+    player.addEventListener('playing', (event) =>{
+        $('button#play_pause').html('Pause');
+    });
+
+    player.addEventListener('pause', (event) =>{
+        $('button#play_pause').html('Play');
+    });
+
+
     $('button#play_pause').bind('click', function () {
         if (this.innerText === 'Pause') {
             player.pause();
-            $('button#play_pause').html('Play');
+
         } else {
             player.play();
-            $('button#play_pause').html('Pause');
+
         }
     });
 
